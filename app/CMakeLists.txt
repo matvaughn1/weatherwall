@@ -11,6 +11,16 @@ set(CMAKE_AUTOMOC ON)
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2 Widgets Network)
 qt_standard_project_setup()
 
+# Some Qt builds still link Apple's AGL framework, which current Xcode SDKs no
+# longer have; drop it (nothing here uses it)
+if(APPLE AND TARGET WrapOpenGL::WrapOpenGL)
+    get_target_property(_gl_libs WrapOpenGL::WrapOpenGL INTERFACE_LINK_LIBRARIES)
+    if(_gl_libs)
+        list(FILTER _gl_libs EXCLUDE REGEX "AGL")
+        set_target_properties(WrapOpenGL::WrapOpenGL PROPERTIES INTERFACE_LINK_LIBRARIES "${_gl_libs}")
+    endif()
+endif()
+
 set(SOURCES src/main.cpp src/config.cpp src/config.h src/desktop.h src/autostart.cpp src/autostart.h)
 if(WIN32)
     list(APPEND SOURCES src/desktop_win.cpp icons/app.rc)
