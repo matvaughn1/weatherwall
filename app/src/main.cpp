@@ -106,7 +106,8 @@ private:
             win->resize(1280, 720);
         }
         QObject *obj = m_wall->createWithInitialProperties(
-            {{"configuration", QVariant::fromValue<QObject *>(m_config)}});
+            {{"configuration", QVariant::fromValue<QObject *>(m_config)},
+             {"screenIndex", int(qMax<qsizetype>(0, QGuiApplication::screens().indexOf(screen)))}});
         auto *item = qobject_cast<QQuickItem *>(obj);
         if (!item) {
             qWarning() << m_wall->errorString();

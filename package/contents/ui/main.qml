@@ -6,6 +6,7 @@
     SPDX-License-Identifier: GPL-3.0-or-later
 */
 import QtQuick
+import QtQuick.Window
 import QtQuick.Effects
 import QtQuick.Particles
 import Qt.labs.folderlistmodel
@@ -31,6 +32,13 @@ WallpaperItem {
         // string lights belong in a back yard or a town, not over a wild mountain view
         return root.chosen && root.chosen.scene !== "wild" ? "lights" : "off";
     }
+    // Which monitor this is (set by the Windows/macOS app), so each one gets its own view
+    property int screenIndex: 0
+    // Photos are decoded at screen size (+ room for the slow zoom), not their full
+    // 3840 px. Tall enough to cover wide screens too (photos are 1.41:1 or wider),
+    // but at most ~2600 real pixels high whatever the display scale.
+    readonly property int decodeHeight: Math.ceil(Math.min(2600 / Math.max(1, Screen.devicePixelRatio),
+                                                           Math.max(height, width / 1.41) * 1.15))
     readonly property string previewCondition: configuration.PreviewCondition || "auto"
     readonly property string previewTime: configuration.PreviewTime || "auto"
     readonly property string previewHoliday: configuration.PreviewHoliday || "auto"
@@ -564,17 +572,18 @@ WallpaperItem {
         if (ownPhoto) { chosen = ownPhoto; chosenKey = periodKey; return; }
         if (!library.length) return;
         if (chosenKey === periodKey && chosen) return;
+        const key = periodKey + (screenIndex > 0 ? "#screen" + screenIndex : "");
         if (holiday.fireworks && isNightPeriod) {
             const list = library.filter(p => fireworksViews.indexOf(p.name) >= 0);
             if (list.length) {
                 let h = 2166136261;
-                for (let i = 0; i < periodKey.length; i++) h = ((h ^ periodKey.charCodeAt(i)) * 16777619) >>> 0;
+                for (let i = 0; i < key.length; i++) h = ((h ^ key.charCodeAt(i)) * 16777619) >>> 0;
                 chosen = list[h % list.length];
                 chosenKey = periodKey;
                 return;
             }
         }
-        chosen = pickPhoto(periodBuckets, periodKey);
+        chosen = pickPhoto(periodBuckets, key);
         chosenKey = periodKey;
     }
     onPeriodKeyChanged: choose()
@@ -672,7 +681,7 @@ WallpaperItem {
         Image {
             id: imgPhoto
             source: layer.folder ? layer.folder + "/photo.jpg" : ""
-            sourceSize.height: Math.ceil(root.height * 1.15)
+            sourceSize.height: root.decodeHeight
             visible: false; asynchronous: true; smooth: true
         }
         Image { id: imgMaps; source: layer.folder ? layer.folder + "/maps.png" : ""; visible: false; asynchronous: true; smooth: true }
@@ -699,7 +708,7 @@ WallpaperItem {
         Image {
             id: imgDecor
             source: layer.folder ? layer.folder + "/decor.png" : ""
-            sourceSize.height: Math.ceil(root.height * 1.15)
+            sourceSize.height: root.decodeHeight
             visible: false; asynchronous: true; smooth: true
             onStatusChanged: if (status === Image.Error) source = Qt.resolvedUrl("images/blank.png")
         }
