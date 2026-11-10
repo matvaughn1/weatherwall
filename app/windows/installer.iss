@@ -1,7 +1,7 @@
 ; Inno Setup script for Live Weather on Windows (built by .github/workflows/release.yml).
-;   iscc /DSrcDir=path\to\deployed\app /DAppVersion=1.1.3 installer.iss
+;   iscc /DSrcDir=path\to\deployed\app /DAppVersion=1.1.4 installer.iss
 #ifndef AppVersion
-  #define AppVersion "1.1.3"
+  #define AppVersion "1.1.4"
 #endif
 
 [Setup]

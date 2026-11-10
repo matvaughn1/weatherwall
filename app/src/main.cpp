@@ -23,6 +23,7 @@
 #include <QRegularExpression>
 #include <QScreen>
 #include <QSystemTrayIcon>
+#include <QTimer>
 
 namespace {
 
@@ -93,7 +94,11 @@ private:
         win->setTitle("Live Weather");
         win->setColor(Qt::black);
         if (!m_windowed) {
-            win->setFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnBottomHint | Qt::WindowDoesNotAcceptFocus
+            // (no WindowStaysOnBottomHint on macOS: the desktop level is set natively)
+            win->setFlags(Qt::FramelessWindowHint | Qt::WindowDoesNotAcceptFocus
+#ifndef Q_OS_MACOS
+                          | Qt::WindowStaysOnBottomHint
+#endif
                           | Qt::WindowTransparentForInput | Qt::WindowFlags(Desktop::windowFlags()));
             win->setScreen(screen);
             win->setGeometry(screen->geometry());
@@ -118,8 +123,15 @@ private:
             connect(win, &QWindow::visibleChanged, qApp, [](bool v) { if (!v) QCoreApplication::quit(); });
             win->show();
         } else {
-            win->showFullScreen();
+            // plain show(), not showFullScreen(): on macOS that opens a full-screen Space
+            win->show();
             Desktop::sendToBack(win, screen);
+#ifdef Q_OS_MACOS
+            // Qt can reset the window level when it shows or moves a window; keep it pinned
+            auto *keep = new QTimer(win);
+            connect(keep, &QTimer::timeout, win, [win, screen] { Desktop::sendToBack(win, screen); });
+            keep->start(3000);
+#endif
         }
         m_windows.insert(screen, win);
     }
