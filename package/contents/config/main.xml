@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="Latitude" type="Double"><default>40.7128</default></entry>
+    <entry name="Longitude" type="Double"><default>-74.0060</default></entry>
+    <entry name="PlaceName" type="String"><default>New York</default></entry>
+    <entry name="Fahrenheit" type="Bool"><default>true</default></entry>
+    <entry name="ShowInfo" type="Bool"><default>true</default></entry>
+    <entry name="RefreshMinutes" type="Int"><default>10</default></entry>
+    <entry name="PreviewCondition" type="String"><default>auto</default></entry>
+    <entry name="PreviewTime" type="String"><default>auto</default></entry>
+    <entry name="PreviewHoliday" type="String"><default>auto</default></entry>
+    <entry name="ShowPatio" type="Bool"><default>true</default></entry>
+    <entry name="SceneMode" type="String"><default>photos</default></entry>
+    <entry name="OnlinePhotos" type="Bool"><default>true</default></entry>
+    <entry name="LiveSky" type="Bool"><default>true</default></entry>
+    <entry name="LightsPower" type="String"><default>auto</default></entry>
+    <entry name="LightsColour" type="String"><default>auto</default></entry>
+    <entry name="Decorations" type="String"><default>always</default></entry>
+    <entry name="PatioStyle" type="String"><default>auto</default></entry>
+    <entry name="PhotoChange" type="String"><default>twice</default></entry>
+    <entry name="Places" type="String"><default>mix</default></entry>
+    <entry name="UseOwnPhoto" type="Bool"><default>false</default></entry>
+    <entry name="OwnPhoto" type="String"><default></default></entry>
+  </group>
+</kcfg>

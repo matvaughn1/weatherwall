@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily photo fetch for the Live Weather wallpaper
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=2h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

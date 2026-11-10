@@ -1,0 +1,9 @@
+[Unit]
+Description=Fetch fresh photos for the Live Weather wallpaper
+After=network-online.target
+
+[Service]
+Type=oneshot
+Nice=15
+IOSchedulingClass=idle
+ExecStart=%h/Projects/weatherwall/.venv/bin/python %h/Projects/weatherwall/tools/fetch_online.py

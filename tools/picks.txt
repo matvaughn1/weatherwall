@@ -1,0 +1,30 @@
+# bucket       sheet        candidate numbers
+clear_day      clear_day    0 2 15 16 21 23
+clear_night    clear_night  8 12 13 19 21 22
+dusk           dusk         4 5 14 18 20 22
+dusk_winter    dusk         1 8
+cloudy_day     cloudy_day   3 4 10 11 17 20
+snow_day       snow_day     0 10 11 13 21 23
+snow_day       cloudy_day   6
+snow_night     snow_night   3 7 10
+rain_day       rain_day     8 17
+rain_night     rain_night   4 5
+fog            fog          0 4 7 10 11 12 15
+storm          storm        0 8 14 15 21
+autumn         clear_day    12
+autumn         cloudy_day   7
+autumn         autumn       2 8 10 15 19 23
+halloween      halloween    1
+# towns and back yards
+clear_day      yard_day     8 9 15 21
+dusk           yard_day     2
+clear_day      town_day     4 8
+dusk           town_day     1 20
+clear_night    town_day     6
+snow_day       town_day     10
+rain_day       town_day     23
+clear_night    town_night   1 12 18
+snow_day       yard_snow    1 2 5 11 12 14 17 19
+autumn         yard_snow    13
+snow_day       town_snow    1
+rain_day       yard_rain    0 1

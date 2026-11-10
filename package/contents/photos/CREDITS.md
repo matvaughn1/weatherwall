@@ -1,0 +1,93 @@
+# Photo credits
+
+All photos are from Wikimedia Commons (originally Unsplash), released under CC0 / public domain.
+
+- clear_day: [Azure lake in the tall mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Azure_lake_in_the_tall_mountains_(Unsplash).jpg) — Sergei Akulich sakulich, CC0
+- clear_day: [Boathouse on a mountain lake (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Boathouse_on_a_mountain_lake_(Unsplash).jpg) — Luca Bravo lucabravo, CC0
+- clear_day: [Mountain over Emerald Lake (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mountain_over_Emerald_Lake_(Unsplash).jpg) — maya tani maya1120, CC0
+- clear_day: [Mountain peak in a lake (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mountain_peak_in_a_lake_(Unsplash).jpg) — Orlova Maria orlovamaria, CC0
+- clear_day: [Mountains reflected in a lake (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mountains_reflected_in_a_lake_(Unsplash).jpg) — Sergei Akulich sakulich, CC0
+- clear_day: [Peaceful mountain lake (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Peaceful_mountain_lake_(Unsplash).jpg) — Héctor J. Rivas hjrc33, CC0
+- clear_night: [Galaxy unsplash 1.jpg](https://commons.wikimedia.org/wiki/File:Galaxy_unsplash_1.jpg) — Dino Reichmuth, CC0
+- clear_night: [M wrona 2017-05-30 (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:M_wrona_2017-05-30_(Unsplash).jpg) — m wrona maciek_wrona, CC0
+- clear_night: [Mammoth Lakes, United States (Unsplash DDhET-updco).jpg](https://commons.wikimedia.org/wiki/File:Mammoth_Lakes,_United_States_(Unsplash_DDhET-updco).jpg) — Benjamin Cole bencole20, CC0
+- clear_night: [Milky Way Arc over Yosemite (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Milky_Way_Arc_over_Yosemite_(Unsplash).jpg) — Rodrigo Soares rodi01, CC0
+- clear_night: [Milky Way Glacier Point (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Milky_Way_Glacier_Point_(Unsplash).jpg) — Jakub Gorajek cinegeek, CC0
+- clear_night: [Milky Way Lake Mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Milky_Way_Lake_Mountains_(Unsplash).jpg) — Andrew Coelho andrewcoelho, CC0
+- dusk: [Carpathian Mountains (Unsplash hmyVTVUxQek).jpg](https://commons.wikimedia.org/wiki/File:Carpathian_Mountains_(Unsplash_hmyVTVUxQek).jpg) — Anastasia Petrova anastasia_p, CC0
+- dusk: [Clouds over Silverthorne mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Clouds_over_Silverthorne_mountains_(Unsplash).jpg) — Nathan Anderson nathananderson, CC0
+- dusk: [Landshuter Europahütte (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Landshuter_Europah%C3%BCtte_(Unsplash).jpg) — Wolfgang Lutz wolfi, CC0
+- dusk: [Mountain sunset (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mountain_sunset_(Unsplash).jpg) — Teddy Kelley teddykelley, CC0
+- dusk: [Mountains in Silverthorne during sunset (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mountains_in_Silverthorne_during_sunset_(Unsplash).jpg) — Nathan Anderson nathananderson, CC0
+- dusk: [Open Water During Sunset (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Open_Water_During_Sunset_(Unsplash).jpg) — Ruston Youngblood youngblood, CC0
+- dusk_winter: [Bukovel mountain sunset (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Bukovel_mountain_sunset_(Unsplash).jpg) — Alexandr Podvalny freestockpro, CC0
+- dusk_winter: [Frosty sunset (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Frosty_sunset_(Unsplash).jpg) — Denys Nevozhai dnevozhai, CC0
+- cloudy_day: [Calm and Cloudy in Lünersee (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Calm_and_Cloudy_in_L%C3%BCnersee_(Unsplash).jpg) — Stijn te Strake stijntestrake, CC0
+- cloudy_day: [Clouds gathering over snowy mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Clouds_gathering_over_snowy_mountains_(Unsplash).jpg) — Jeremy Bishop tidesinourveins, CC0
+- cloudy_day: [Cloudy mountain scenery (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Cloudy_mountain_scenery_(Unsplash).jpg) — Nathan Anderson nathananderson, CC0
+- cloudy_day: [Cloudy mountain valley (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Cloudy_mountain_valley_(Unsplash).jpg) — Matheus Bandoch mbandoch, CC0
+- cloudy_day: [Eilean Donan Castle on a cloudy day (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Eilean_Donan_Castle_on_a_cloudy_day_(Unsplash).jpg) — Sorin Tudorut sharpixdigital, CC0
+- cloudy_day: [Icy Mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Icy_Mountains_(Unsplash).jpg) — Nathan Anderson nathananderson, CC0
+- snow_day: [A cabin among the snowy forest (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:A_cabin_among_the_snowy_forest_(Unsplash).jpg) — Gérôme Bruneau geromebruneau, CC0
+- snow_day: [Forest near ski hill (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Forest_near_ski_hill_(Unsplash).jpg) — Greg Rakozy grakozy, CC0
+- snow_day: [Forest trees in the snow (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Forest_trees_in_the_snow_(Unsplash).jpg) — Sebastian Pichler pichler_sebastian, CC0
+- snow_day: [From above 1 (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:From_above_1_(Unsplash).jpg) — adrian aows, CC0
+- snow_day: [Mountain resorts on a slope (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mountain_resorts_on_a_slope_(Unsplash).jpg) — NeONBRAND neonbrand, CC0
+- snow_day: [Path into the snowy forest (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Path_into_the_snowy_forest_(Unsplash).jpg) — Artem Kulikov kul_art, CC0
+- snow_day: [Cloudy Skies Over Mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Cloudy_Skies_Over_Mountains_(Unsplash).jpg) — Cole Mader colemader, CC0
+- snow_night: [Kanchenjunga South Peak (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Kanchenjunga_South_Peak_(Unsplash).jpg) — Mukesh Jain hocus_phocus, CC0
+- snow_night: [Spotlights in forest (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Spotlights_in_forest_(Unsplash).jpg) — Ilario Piatti ilariopiatti, CC0
+- snow_night: [Winter in the suburbs (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Winter_in_the_suburbs_(Unsplash).jpg) — sergey Svechnikov blackout095, CC0
+- rain_day: [Rainy Day Waterfall (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Rainy_Day_Waterfall_(Unsplash).jpg) — Matt Jones mattjonesdp, CC0
+- rain_day: [Hiker standing on a log at the Alouette Lake near Maple Ridge, British Columbia surrounded by mist and precipitation. Photo by Robert Alexander Wilson, 2017 (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Hiker_standing_on_a_log_at_the_Alouette_Lake_near_Maple_Ridge,_British_Columbia_surrounded_by_mist_and_precipitation._Photo_by_Robert_Alexander_Wilson,_2017_(Unsplash).jpg) — ROBERT ALEXANDER WILSON ra_wilsn, CC0
+- rain_night: [Nice, France (Unsplash cjPDmJlWqNE).jpg](https://commons.wikimedia.org/wiki/File:Nice,_France_(Unsplash_cjPDmJlWqNE).jpg) — Loic Djim loic, CC0
+- rain_night: [Porsche 911 on a rainy evening (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Porsche_911_on_a_rainy_evening_(Unsplash).jpg) — Gabriel Gurrola gabrielgurrola, CC0
+- fog: [Elblag fog (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Elblag_fog_(Unsplash).jpg) — remi skatulski remiskatulski, CC0
+- fog: [Foggy Hills (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Foggy_Hills_(Unsplash).jpg) — Tobias Tullius tobiastu, CC0
+- fog: [Foggy day at Finkenberg (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Foggy_day_at_Finkenberg_(Unsplash).jpg) — Nicole Kühn nicole_k, CC0
+- fog: [Foggy tree lines (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Foggy_tree_lines_(Unsplash).jpg) — Jorge Garcia jorgeblah, CC0
+- fog: [Foggy woodlands (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Foggy_woodlands_(Unsplash).jpg) — Roksolana Zasiadko cieloadentro, CC0
+- fog: [Ivy woods (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Ivy_woods_(Unsplash).jpg) — Melinda Pack melindapack, CC0
+- fog: [Moody Forest (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Moody_Forest_(Unsplash).jpg) — Thomas Claeys thomascl, CC0
+- storm: [Church in a Storm (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Church_in_a_Storm_(Unsplash).jpg) — Dominique Josse djosse, CC0
+- storm: [Dark clouds above the hilly valley (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Dark_clouds_above_the_hilly_valley_(Unsplash).jpg) — LoboStudio Hamburg lobostudiohamburg, CC0
+- storm: [Lonealy house (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Lonealy_house_(Unsplash).jpg) — Alexander Andrews alex_andrews, CC0
+- storm: [Lost in the clouds (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Lost_in_the_clouds_(Unsplash).jpg) — Nathan Anderson nathananderson, CC0
+- storm: [Stormy Sky in Silverthorne (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Stormy_Sky_in_Silverthorne_(Unsplash).jpg) — Nathan Anderson nathananderson, CC0
+- autumn: [Mountain lake (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mountain_lake_(Unsplash).jpg) — Aleksandra Boguslawska aleksandraboguslawska, CC0
+- autumn: [Cloudy autumn afternoon in Silverthorne mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Cloudy_autumn_afternoon_in_Silverthorne_mountains_(Unsplash).jpg) — Nathan Anderson nathananderson, CC0
+- autumn: [Autumn forest near a mountain (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Autumn_forest_near_a_mountain_(Unsplash).jpg) — Nathan Anderson nathananderson, CC0
+- autumn: [Bad Pyrmont, Deutschland (Unsplash CoD2Q92UaEg).jpg](https://commons.wikimedia.org/wiki/File:Bad_Pyrmont,_Deutschland_(Unsplash_CoD2Q92UaEg).jpg) — Sebastian Unrau sebastian_unrau, CC0
+- autumn: [Bend in the forest road (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Bend_in_the_forest_road_(Unsplash).jpg) — Justin Luebke jluebke, CC0
+- autumn: [Early morning in autumn forest (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Early_morning_in_autumn_forest_(Unsplash).jpg) — Artem Sapegin sapegin, CC0
+- autumn: [Lake island in the autumn (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Lake_island_in_the_autumn_(Unsplash).jpg) — Jeff Hopper jeffhopper, CC0
+- autumn: [Plowed fields and autumn trees (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Plowed_fields_and_autumn_trees_(Unsplash).jpg) — Martin Sanchez zekedrone, CC0
+- christmas: [Spinning lights in a static world (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Spinning_lights_in_a_static_world_(Unsplash).jpg) — Javier García javigabbo, CC0
+- halloween: [Carved pumpkin as face (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Carved_pumpkin_as_face_(Unsplash).jpg) — Beth Teutschmann teutschmann, CC0
+- clear_day: [White daisies in a garden (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:White_daisies_in_a_garden_(Unsplash).jpg) — Thirsty Turf Irrigation thirstyturfirrigation, CC0
+- clear_day: [Forest house (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Forest_house_(Unsplash).jpg) — Bruno Marinho brunomarinho, CC0
+- clear_day: [Savannah, Georgia (Unsplash YOoucEImrKw).jpg](https://commons.wikimedia.org/wiki/File:Savannah,_Georgia_(Unsplash_YOoucEImrKw).jpg) — Jessica Furtney jessicamaephotographyga, CC0
+- clear_day: [Skylounge (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Skylounge_(Unsplash).jpg) — Scott Webb scottwebb, CC0
+- dusk: [Backyard wild flowers (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Backyard_wild_flowers_(Unsplash).jpg) — Valentina Locatelli valentina_locatelli, CC0
+- clear_day: [Panoramic view of Rupea - Small town red roofs (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Panoramic_view_of_Rupea_-_Small_town_red_roofs_(Unsplash).jpg) — David Marcu davidmarcu, CC0
+- clear_day: [Tremezzo waterfront of Lake Como, Italy 2015-11-16 unsplash 1447722939828.jpg](https://commons.wikimedia.org/wiki/File:Tremezzo_waterfront_of_Lake_Como,_Italy_2015-11-16_unsplash_1447722939828.jpg) — Mariya Georgieva mariyageorgieva, CC0
+- dusk: [Evening falls on a mountain town (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Evening_falls_on_a_mountain_town_(Unsplash).jpg) — Yoosun Won showkin9, CC0
+- dusk: [European village (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:European_village_(Unsplash).jpg) — Łukasz Czechowicz jestspoko, CC0
+- clear_night: [Quaint river town (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Quaint_river_town_(Unsplash).jpg) — Pedro Lastra peterlaster, CC0
+- snow_day: [A village church in winter (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:A_village_church_in_winter_(Unsplash).jpg) — Jon Flobrant jonflobrant, CC0
+- rain_day: [Grand Canyon Village, United States (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Grand_Canyon_Village,_United_States_(Unsplash).jpg) — Tim Trad timtrad, CC0
+- clear_night: [Quaint river town (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Quaint_river_town_(Unsplash).jpg) — Pedro Lastra peterlaster, CC0
+- clear_night: [Cobblestone street at night (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Cobblestone_street_at_night_(Unsplash).jpg) — Khachik Simonian khachiksimonian, CC0
+- clear_night: [Late night wander (Unsplash oetjJwfy8D8).jpg](https://commons.wikimedia.org/wiki/File:Late_night_wander_(Unsplash_oetjJwfy8D8).jpg) — Tim Goedhart nofilter_noglory, CC0
+- snow_day: [A house in winter fog (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:A_house_in_winter_fog_(Unsplash).jpg) — Lukas Neasi lukasneasi, CC0
+- snow_day: [A sunny snow capped mountain over a house (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:A_sunny_snow_capped_mountain_over_a_house_(Unsplash).jpg) — Volker Schnäbele volker, CC0
+- snow_day: [Falling snow (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Falling_snow_(Unsplash).jpg) — Max Sandelin themaxsandelin, CC0
+- snow_day: [Mount Charleston winter cabin (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Mount_Charleston_winter_cabin_(Unsplash).jpg) — Wesley Tingey wesleytingey, CC0
+- snow_day: [Person walks west village street (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Person_walks_west_village_street_(Unsplash).jpg) — Chanan Greenblatt chanan, CC0
+- snow_day: [Snow covered road (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Snow_covered_road_(Unsplash).jpg) — Todd Torabi torabi77, CC0
+- snow_day: [Winter cabin in California (Unsplash LPS zk5MsqA).jpg](https://commons.wikimedia.org/wiki/File:Winter_cabin_in_California_(Unsplash_LPS_zk5MsqA).jpg) — YUNXI SHI yunxishi, CC0
+- snow_day: [Klosters Parsenn resort (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Klosters_Parsenn_resort_(Unsplash).jpg) — Simon Mumenthaler mumenthalers, CC0
+- autumn: [Quiet cabin in the mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Quiet_cabin_in_the_mountains_(Unsplash).jpg) — Ravi Pinisetti ravipinisetti, CC0
+- snow_day: [A man in snowy Chinatown (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:A_man_in_snowy_Chinatown_(Unsplash).jpg) — Matt Popovich uh, CC0
+- rain_day: [Bike in the Rain (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Bike_in_the_Rain_(Unsplash).jpg) — Lauren Kay lakael, CC0
+- rain_day: [Cars buildings rain Boston (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Cars_buildings_rain_Boston_(Unsplash).jpg) — Ren Wang r1g, CC0

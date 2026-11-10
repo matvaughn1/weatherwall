@@ -1,0 +1,9 @@
+.venv/
+build/
+app/build/
+__pycache__/
+*.pyc
+appletsrc.backup*
+*.tar.gz
+*.zip
+*.dmg

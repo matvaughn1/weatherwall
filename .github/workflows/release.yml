@@ -1,0 +1,136 @@
+# Builds every download and attaches it to a GitHub release when a v* tag is
+# pushed (or a test build from the Actions tab):
+#   Linux    LiveWeather-<ver>-KDE-Plasma.zip   (the Plasma 6 wallpaper plugin)
+#   Windows  LiveWeather-<ver>-Windows-Setup.exe + portable zip
+#   macOS    LiveWeather-<ver>-macOS.dmg        (Apple silicon and Intel)
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+env:
+  QT_VERSION: "6.8.3"
+
+jobs:
+  shaders:
+    # compile the shaders once with the same Qt the apps ship with
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{ env.QT_VERSION }}
+          modules: qtshadertools
+          cache: true
+      - name: Compile shaders
+        run: QSB="$QT_ROOT_DIR/bin/qsb" ./build.sh --no-install
+      - name: Version
+        id: v
+        run: echo "version=$(python3 -c 'import json;print(json.load(open("package/metadata.json"))["KPlugin"]["Version"])')" >> "$GITHUB_OUTPUT"
+      - name: Plasma plugin zip
+        run: cd package && zip -qr "../LiveWeather-${{ steps.v.outputs.version }}-KDE-Plasma.zip" metadata.json contents
+      - uses: actions/upload-artifact@v4
+        with: { name: package, path: package }
+      - uses: actions/upload-artifact@v4
+        with: { name: linux, path: "LiveWeather-*-KDE-Plasma.zip", compression-level: 0 }
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+
+  windows:
+    needs: shaders
+    runs-on: windows-2022
+    env:
+      VERSION: ${{ needs.shaders.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: package, path: package }
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{ env.QT_VERSION }}
+          arch: win64_msvc2022_64
+          cache: true
+      - name: Build
+        run: |
+          cmake -S app -B build
+          cmake --build build --config Release
+      - name: Bundle Qt and the wallpaper
+        shell: bash
+        run: |
+          mkdir -p deploy
+          cp "build/Release/Live Weather.exe" deploy/
+          windeployqt --release --no-translations --compiler-runtime \
+            --qmldir app/qml --qmldir package/contents/ui "deploy/Live Weather.exe"
+          cp -r package deploy/wallpaper
+          cp README.md package/contents/photos/CREDITS.md deploy/
+      - name: Installer
+        shell: bash
+        run: |
+          ISCC="/c/Program Files (x86)/Inno Setup 6/ISCC.exe"
+          [ -f "$ISCC" ] || { choco install innosetup -y --no-progress; }
+          "$ISCC" "/DSrcDir=$GITHUB_WORKSPACE\\deploy" "/DAppVersion=$VERSION" "/O$GITHUB_WORKSPACE" app/windows/installer.iss
+      - name: Portable zip
+        shell: pwsh
+        run: Compress-Archive -Path deploy\* -DestinationPath "LiveWeather-$env:VERSION-Windows-Portable.zip" -CompressionLevel Fastest
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: |
+            LiveWeather-*-Windows-Setup.exe
+            LiveWeather-*-Windows-Portable.zip
+          compression-level: 0
+
+  macos:
+    needs: shaders
+    runs-on: macos-14
+    env:
+      VERSION: ${{ needs.shaders.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: package, path: package }
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+      - name: Build
+        run: |
+          cmake -S app -B build -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0
+          cmake --build build
+      - name: Bundle Qt and the wallpaper
+        run: |
+          APP="build/Live Weather.app"
+          macdeployqt "$APP" -qmldir=app/qml -qmldir=package/contents/ui
+          cp -R package "$APP/Contents/Resources/wallpaper"
+          # ad-hoc signature (no paid Apple developer ID): needed to run on Apple silicon
+          codesign --force --deep --sign - "$APP"
+      - name: Disk image
+        run: |
+          mkdir dmg
+          cp -R "build/Live Weather.app" dmg/
+          ln -s /Applications dmg/Applications
+          cp package/contents/photos/CREDITS.md dmg/
+          hdiutil create -volname "Live Weather" -srcfolder dmg -ov -format UDZO "LiveWeather-$VERSION-macOS.dmg"
+      - uses: actions/upload-artifact@v4
+        with: { name: macos, path: "LiveWeather-*-macOS.dmg", compression-level: 0 }
+
+  release:
+    needs: [shaders, windows, macos]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: linux, path: dist }
+      - uses: actions/download-artifact@v4
+        with: { name: windows, path: dist }
+      - uses: actions/download-artifact@v4
+        with: { name: macos, path: dist }
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
