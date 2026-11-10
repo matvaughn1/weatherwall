@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(LiveWeather VERSION 1.1.5 LANGUAGES CXX)
+project(LiveWeather VERSION 1.1.6 LANGUAGES CXX)
 
 # Live Weather for Windows and macOS: runs the same QML wallpaper as the KDE
 # plugin (../package) in a window behind the desktop icons on every screen.

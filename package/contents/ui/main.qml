@@ -708,7 +708,7 @@ WallpaperItem {
         Image {
             id: imgDecor
             source: layer.folder ? layer.folder + "/decor.png" : ""
-            sourceSize.height: root.decodeHeight
+            sourceSize.height: Math.ceil(root.height)
             visible: false; asynchronous: true; smooth: true
             onStatusChanged: if (status === Image.Error) source = Qt.resolvedUrl("images/blank.png")
         }
@@ -786,11 +786,17 @@ WallpaperItem {
             id: photoA
             opacity: photoView.aFront ? 1 : 0
             Behavior on opacity { NumberAnimation { duration: 3000; easing.type: Easing.InOutQuad } }
+            visible: opacity > 0
+            // faded out and not the next photo: let its textures go
+            onOpacityChanged: if (opacity === 0 && folder !== photoView.want) folder = ""
         }
         PhotoLayer {
             id: photoB
             opacity: photoView.aFront ? 0 : 1
             Behavior on opacity { NumberAnimation { duration: 3000; easing.type: Easing.InOutQuad } }
+            visible: opacity > 0
+            // faded out and not the next photo: let its textures go
+            onOpacityChanged: if (opacity === 0 && folder !== photoView.want) folder = ""
         }
         // switch to the newly loaded photo once all three images are in
         Connections {
@@ -1070,6 +1076,10 @@ WallpaperItem {
         sourceItem: fwLayer
         hideSource: root.photoMode
         live: fireworks.running || root.fwLevel > 0
+        // a 1x1 texture the rest of the time (the photo shader ignores it then)
+        textureSize: live ? Qt.size(Math.ceil(root.width * Screen.devicePixelRatio),
+                                    Math.ceil(root.height * Screen.devicePixelRatio)) : Qt.size(1, 1)
+        onLiveChanged: scheduleUpdate()
         visible: false
     }
 
@@ -1234,10 +1244,13 @@ WallpaperItem {
     // while to dry off after it stops.
     property real glassWet: (kind === "rain" || kind === "storm") ? 0.35 + 0.65 * Math.max(intensity, kind === "storm" ? 1 : 0) : 0
     Behavior on glassWet { NumberAnimation { duration: root.glassWet > 0 ? 8000 : 60000 } }
+    // only while the glass is wet: otherwise it would copy the whole scene
+    // every frame and hold a full-screen texture for nothing
     ShaderEffectSource {
         id: sceneTex
-        sourceItem: sceneRoot
+        sourceItem: glass.visible ? sceneRoot : null
         hideSource: glass.visible
+        live: glass.visible
         visible: false
     }
     ShaderEffect {
