@@ -4,7 +4,8 @@
   halloween     pumpkins and carved jack-o'-lanterns on the ground and steps,
                 sheet ghosts hanging in nearby trees
   thanksgiving  pumpkins, hay bales and corn-stalk bundles
-  christmas     little lit trees in yards, wreaths on walls
+  christmas     little lit trees in yards, wreaths on walls, glass baubles
+                hanging in the photo's own trees
   july4         flags on poles, red-white-blue bunting along rooflines
   oktoberfest   blue-and-white pennant bunting, barrels by the walls
   valentine     red/pink heart bunting
@@ -228,7 +229,72 @@ def xmas_tree(h, rng, pal):
             d = (X - X[ys[i], xs[i]]) ** 2 + (Y - Y[ys[i], xs[i]]) ** 2
             m = d < r * r
             rgb[m] = c * 0.8 + 0.2; glow[m] = c * 2.0
+        # glass baubles between the bulbs
+        for i in rng.choice(len(xs), size=min(len(xs), int(3 + h * 0.05)), replace=False):
+            bx, by = X[ys[i], xs[i]], Y[ys[i], xs[i]]
+            r = max(1.5, h * 0.035)
+            uu, vv = (X - bx) / r, (Y - by) / r
+            m = uu * uu + vv * vv < 1
+            if not m.any():
+                continue
+            c = np.array(ORNAMENT_COLOURS[rng.integers(0, len(ORNAMENT_COLOURS))])
+            nb = sphere_normal(np.clip(uu, -1, 1), np.clip(vv, -1, 1))
+            rgb[m] = shade(nb, c[None, None, :], amb=0.3, spec=0.9, shin=50)[m]
+            g = m & ((uu + 0.35) ** 2 + (vv + 0.35) ** 2 < 0.06)
+            rgb[g] = 0.95; glow[g] = 0.8
     return Sprite(down(rgb), down(a), down(glow))
+
+
+ORNAMENT_COLOURS = [(0.78, 0.05, 0.08), (0.85, 0.62, 0.15), (0.75, 0.78, 0.82), (0.06, 0.40, 0.16),
+                    (0.10, 0.22, 0.62), (0.55, 0.10, 0.45)]
+
+
+def ornament(h, rng, colour=None):
+    """A glass bauble hanging on a thread: the sprite's bottom is the bauble,
+    the top is where the thread is tied to the branch."""
+    w = max(3, int(h * 0.62))
+    X, Y = grid(w, h)
+    ball = w * 0.98                                      # diameter
+    cx, cy = w / 2, h - ball / 2
+    u = (X - cx) / (ball / 2); v = (Y - cy) / (ball / 2)
+    inside = u * u + v * v < 1
+    n = sphere_normal(np.clip(u, -1, 1), np.clip(v, -1, 1))
+    c = np.array(colour if colour is not None else ORNAMENT_COLOURS[rng.integers(0, len(ORNAMENT_COLOURS))])
+    c = c * rng.uniform(0.85, 1.1)
+    rgb = shade(n, c[None, None, :], amb=0.30, spec=0.9, shin=60)
+    # glass: a bright window reflection and a darker rim
+    rim = np.sqrt(np.clip(u * u + v * v, 0, 1))
+    rgb *= (1 - 0.35 * rim ** 4)[..., None]
+    glint = ((u + 0.32) ** 2 + (v + 0.36) ** 2) < 0.03
+    rgb[glint] = 0.95
+    if rng.random() < 0.35:                              # a glitter band round the middle
+        band = (np.abs(v) < 0.12) & inside
+        rgb[band] = np.clip(rgb[band] * 0.6 + 0.4 * np.array([0.95, 0.85, 0.55]), 0, 1)
+    a = inside.astype(np.float32)
+    # metal cap and thread
+    capH = ball * 0.16
+    cap = (np.abs(X - cx) < ball * 0.17) & (Y > h - ball - capH * 0.6) & (Y < h - ball + capH * 0.5)
+    rgb[cap] = (0.80, 0.72, 0.45); a[cap] = 1
+    thread = (np.abs(X - cx) < max(0.45, w * 0.03)) & (Y < h - ball - capH * 0.5)
+    rgb[thread] = (0.55, 0.50, 0.40); a[thread] = np.maximum(a[thread], 0.8)
+    # at night the glass picks up the string lights: the glint and a faint sheen
+    glow = np.zeros_like(rgb)
+    glow[glint] = 0.9
+    glow[inside & ~glint] = c * 0.18
+    return Sprite(down(rgb), down(a), down(glow))
+
+
+def hang_spots(trees, dist, rng, n, H, scale):
+    """Branches to hang ornaments from, with foliage behind the whole bauble
+    so none float in the air over roofs or sky."""
+    out = []
+    for x, y, h in spots(trees, dist, rng, n * 3, 2.2, H, scale, min_px=6):
+        yb = int(y + h)
+        if yb < trees.shape[0] and trees[yb, x] and trees[int(y + h * 0.6), x]:
+            out.append((x, y, h))
+            if len(out) >= n:
+                break
+    return out
 
 
 def wreath(h, rng):
@@ -436,6 +502,13 @@ def make(folder, holiday, scene, seed):
         if built:
             for x, y, h in spots(wall, dist, rng, 4, 4.0, H, 0.07):
                 stamp(layer, alpha, glow, wreath(int(h), rng), x, y, dist[y, x], maps, shadow=False)
+        # baubles hung in the photo's own trees (nearby ones; a few in the wild)
+        # real trees and shrubs only: not grass or the ground plants grow on
+        decorated = trees & (maps["ground"] < 0.25) & (maps["up"] < 0.5) & (dist < (0.45 if built else 0.3))
+        theme = None if rng.random() < 0.6 else ORNAMENT_COLOURS[rng.integers(0, 3)]  # some trees one colour
+        for x, y, h in hang_spots(decorated, dist, rng, 16 if built else 6, H, 0.045):
+            sp = ornament(int(h), rng, theme if theme is not None and rng.random() < 0.8 else None)
+            stamp(layer, alpha, glow, sp, x, y + int(h), dist[y, x] - 0.03, maps, shadow=False)
     elif holiday == "july4":
         ground_props(flag, 5, 0.22, spacing=2.0)
     elif holiday == "oktoberfest":
